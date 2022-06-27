@@ -1,9 +1,9 @@
 data "azurerm_resource_group" "sample" {
-  name     = "woordurff_Sawyer"
+  name     = "Manish"
 }
 resource "azurerm_storage_account" "inbox" {
   name                      = "manish3"
-  resource_group_name       = "woordurff_Sawyer"
+  resource_group_name       = "Manish"
   location                  = "East US"
   account_tier              = "Standard"
   account_replication_type  = "LRS"
@@ -18,7 +18,7 @@ resource "azurerm_storage_container" "storagecontainer" {
 resource "azurerm_application_insights" "logging" {
   name                = "blob-down-ai"
   location            = "East US"
-  resource_group_name = "woordurff_Sawyer"
+  resource_group_name = "Manish"
   application_type    = "web"
   retention_in_days   = 90
 }
@@ -54,7 +54,7 @@ data "azurerm_storage_account_blob_container_sas" "storage_account_blob_containe
 resource "azurerm_app_service_plan" "fxnapp" {
   name                = "blobdown-fxn-plan"
   location            = "East US"
-  resource_group_name = "woordurff_Sawyer"
+  resource_group_name = "Manish"
   kind                = "functionapp"
   sku {
     tier = "Dynamic"
@@ -64,7 +64,7 @@ resource "azurerm_app_service_plan" "fxnapp" {
 resource "azurerm_function_app" "fsn" {
   name                       = "ManishBlobDownloadFunction"
   location                   = "East Us"
-  resource_group_name        = "woordurff_Sawyer"
+  resource_group_name        = "Manish"
   app_service_plan_id        = azurerm_app_service_plan.fxnapp.id
 
   app_settings = {
